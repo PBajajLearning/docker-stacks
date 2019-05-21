@@ -3,7 +3,7 @@
 ARG BASE_CONTAINER=jupyter/scipy-notebook
 FROM $BASE_CONTAINER
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Rahul Dave <rahuldave@univ.ai>"
 
 # Install Tensorflow
 RUN conda install --quiet --yes \
@@ -14,3 +14,4 @@ RUN conda install --quiet --yes \
     fix-permissions /home/$NB_USER
 
 RUN conda install pytorch torchvision -c pytorch
+RUN pip install wandb
